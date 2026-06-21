@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:gh-pages": "vite build --mode ghpages",
     "dev": "vite"
   },
   "dependencies": {
-    "@fontsource-variable/geist-mono": "^5.2.8",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
