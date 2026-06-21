@@ -1,0 +1,205 @@
+/* Brand ------------------------------------------------------------------------------------------*/
+
+@keyframes zus-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.app-brand {
+  position: relative;
+  z-index: 40;
+  font-family: 'Basement Grotesque', sans-serif;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  letter-spacing: 0.07em;
+  line-height: 0;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.app-brand__text {
+  display: block;
+  line-height: 1;
+  text-box-trim: trim-end;
+  text-box-edge: cap alphabetic;
+}
+
+@supports not (text-box-trim: trim-end) {
+  .app-brand--mobile .app-brand__text {
+    transform: translateY(-0.08em);
+  }
+
+  .app-brand--desktop .app-brand__text {
+    transform: translateY(-0.07em);
+  }
+}
+
+.app-brand__hover-marker {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 11px solid currentColor;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-4px, calc(-50% - 2px)) scaleX(1);
+  transform-origin: right center;
+  transition:
+    opacity 110ms ease,
+    transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0ms linear 140ms;
+}
+
+.app-brand:hover .app-brand__hover-marker,
+.app-brand:focus-visible .app-brand__hover-marker {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, calc(-50% - 2px)) scaleX(1.35);
+  transition:
+    opacity 110ms ease,
+    transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0ms linear;
+}
+
+.app-brand--mobile {
+  font-size: 28px;
+}
+
+.app-brand--mobile .app-brand__hover-marker {
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+  border-right-width: 14px;
+}
+
+.app-brand--desktop {
+  font-size: clamp(14px, 2.35vw, 20px);
+}
+
+/* Nav tabs ---------------------------------------------------------------------------------------*/
+
+.app-nav-tabs {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  height: 34px;
+}
+
+.app-nav-tabs--mobile {
+  min-width: 190px;
+}
+
+.app-nav-tabs--desktop {
+  min-width: 220px;
+}
+
+.app-nav-button {
+  flex: 1;
+  background: transparent;
+  color: var(--ui-text);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.app-nav-button__marker-slot {
+  width: 14px;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+.app-nav-marker {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 11px solid var(--ui-text);
+}
+
+[data-app-nav-button] .app-nav-marker {
+  opacity: 0;
+  transform: translateX(-3px) scaleX(1.15);
+  transform-origin: left center;
+  transition:
+    opacity 110ms ease,
+    transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-app-nav-button]:hover .app-nav-marker,
+[data-app-nav-button]:focus-visible .app-nav-marker,
+[data-app-nav-button] .app-nav-marker.is-active {
+  opacity: 1;
+  transform: translateX(0) scaleX(1.35);
+}
+
+[data-app-nav-tabs][data-active='home']:has([data-app-nav='projects']:is(:hover, :focus-visible))
+  [data-app-nav='home']
+  .app-nav-marker.is-active,
+[data-app-nav-tabs][data-active='projects']:has([data-app-nav='home']:is(:hover, :focus-visible))
+  [data-app-nav='projects']
+  .app-nav-marker.is-active {
+  opacity: 0;
+  transform: translateX(-3px) scaleX(1.15);
+}
+
+.app-nav-sep {
+  width: 1px;
+  background: var(--ui-sep);
+  height: 18px;
+  align-self: center;
+}
+
+/* Mobile layout ----------------------------------------------------------------------------------*/
+
+[data-layout='mobile'] .app-brand:hover .app-brand__hover-marker,
+[data-layout='mobile'] .app-brand:focus-visible .app-brand__hover-marker {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-4px, calc(-50% - 2px)) scaleX(1);
+}
+
+[data-layout='mobile'] [data-app-nav-button]:hover .app-nav-marker:not(.is-active),
+[data-layout='mobile'] [data-app-nav-button]:focus-visible .app-nav-marker:not(.is-active) {
+  opacity: 0;
+  transform: translateX(-3px) scaleX(1.15);
+}
+
+[data-layout='mobile']
+  [data-app-nav-tabs][data-active='home']:has([data-app-nav='projects']:is(:hover, :focus-visible))
+  [data-app-nav='home']
+  .app-nav-marker.is-active,
+[data-layout='mobile']
+  [data-app-nav-tabs][data-active='projects']:has([data-app-nav='home']:is(:hover, :focus-visible))
+  [data-app-nav='projects']
+  .app-nav-marker.is-active {
+  opacity: 1;
+  transform: translateX(0) scaleX(1.35);
+}
+
+/* Nav lines --------------------------------------------------------------------------------------*/
+
+[data-nav-line],
+[data-nav-line]:focus,
+[data-nav-line]:focus-visible {
+  outline: none;
+  box-shadow: none;
+}

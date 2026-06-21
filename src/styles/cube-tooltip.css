@@ -1,0 +1,38 @@
+/* Cube face tooltip ------------------------------------------------------------------------------*/
+
+.cube-face-tooltip {
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  padding: 10px 14px;
+  font-family: var(--font-site);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: var(--font-site-letter-spacing);
+  text-transform: uppercase;
+  color: var(--ui-text);
+  white-space: nowrap;
+}
+
+.cube-face-tooltip__tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+.cube-face-tooltip__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+}
+
+.cube-face-tooltip__sep {
+  flex-shrink: 0;
+  width: 1px;
+  height: 16px;
+  margin: 0 12px;
+  background: var(--ui-sep);
+}
