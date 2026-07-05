@@ -53,7 +53,7 @@ function fontPreloadPlugin(): Plugin {
 }
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'ghpages' ? '/interactive-portfolio/' : '/',
+  base: '/',
   server: {
     host: '127.0.0.1',
     port: 5173,
