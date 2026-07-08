@@ -1,6 +1,21 @@
 import { useLocale } from '../i18n/useLocale';
 import { fixAboutParagraph } from '../utils/text';
 
+function getAboutTextGap(
+  viewportWidth: number,
+  viewportHeight: number,
+  isMobile: boolean,
+): number {
+  if (viewportHeight <= viewportWidth) return 42;
+
+  const portraitRatio = viewportHeight / viewportWidth;
+  const minGap = isMobile ? 16 : 22;
+  const maxGap = 42;
+  const t = Math.min(1, portraitRatio - 1);
+
+  return Math.round(maxGap - t * (maxGap - minGap));
+}
+
 type AboutPageProps = {
   isMobile: boolean;
   inset: number;
@@ -21,7 +36,7 @@ export function AboutPage({
   const { messages } = useLocale();
   const displaySize = isMobile ? Math.min(photoSize, 280) : photoSize;
   const half = displaySize / 2;
-  const textGap = 42;
+  const textGap = getAboutTextGap(viewportWidth, viewportHeight, isMobile);
   const headerBand = inset + 34;
   const topZoneBottom = navCy - half - textGap;
   const bottomZoneTop = navCy + half + textGap;
