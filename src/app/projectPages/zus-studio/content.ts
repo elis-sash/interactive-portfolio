@@ -18,6 +18,12 @@ export const ZUS_STUDIO_BLOCKS: readonly ProjectBlockMeta[] = [
     surface: true,
   },
   {
+    id: 'adaptive',
+    type: 'video',
+    src: `${ZUS_STUDIO}/adaptive.mp4`,
+    objectFit: 'cover',
+  },
+  {
     id: 'site-scroll',
     type: 'video',
     src: `${ZUS_STUDIO}/site-scroll-original.mp4`,

@@ -20,17 +20,17 @@ export const MAX_BLOCKS: readonly ProjectBlockMeta[] = [
   { id: 'spark', type: 'video', src: `${MAX}/logo-spark-original.mp4` },
   { id: 'elements', type: 'video', src: `${MAX}/elements-original.mp4` },
   {
-    id: 'social',
-    type: 'image',
-    src: `${MAX}/social-grid.png`,
-    width: 2400,
-    height: 1534,
-  },
-  {
     id: 'billboard',
     type: 'image',
     src: `${MAX}/billboard.png`,
     width: 2400,
     height: 1331,
+  },
+  {
+    id: 'social',
+    type: 'image',
+    src: `${MAX}/social-grid.png`,
+    width: 2400,
+    height: 1534,
   },
 ];

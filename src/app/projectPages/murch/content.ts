@@ -5,11 +5,11 @@ const MURCH = PROJECT_ASSETS.murch;
 
 export const MURCH_BLOCKS: readonly ProjectBlockMeta[] = [
   {
-    id: 'hero',
+    id: 'keychain-close',
     type: 'image',
-    src: `${MURCH}/hero.jpg`,
+    src: `${MURCH}/keychain-close.png`,
     width: 1024,
-    height: 682,
+    height: 524,
     slot: 'top',
   },
   {
@@ -19,17 +19,16 @@ export const MURCH_BLOCKS: readonly ProjectBlockMeta[] = [
     surface: true,
   },
   {
-    id: 'fest-detail',
+    id: 'keychain-wide',
     type: 'image',
-    src: `${MURCH}/fest-detail.jpg`,
-    width: 819,
-    height: 1024,
+    src: `${MURCH}/keychain-wide.png`,
+    width: 1024,
+    height: 524,
   },
   {
-    id: 'stickers-blender',
-    type: 'image',
-    src: `${MURCH}/stickers-blender.png`,
-    width: 1024,
-    height: 576,
+    id: 'recording',
+    type: 'video',
+    src: `${MURCH}/0061-0090.mkv`,
+    objectFit: 'cover',
   },
 ];
