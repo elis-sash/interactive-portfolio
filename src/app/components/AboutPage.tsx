@@ -5,19 +5,23 @@ function getAboutTextGap(
   viewportWidth: number,
   viewportHeight: number,
   isMobile: boolean,
+  isCompactMobile: boolean,
 ): number {
-  if (viewportHeight <= viewportWidth) return 42;
+  const isPortrait = viewportHeight > viewportWidth;
 
-  const portraitRatio = viewportHeight / viewportWidth;
-  const minGap = isMobile ? 16 : 22;
-  const maxGap = 42;
-  const t = Math.min(1, portraitRatio - 1);
+  if (isPortrait) {
+    if (isCompactMobile) return 14;
+    if (isMobile) return 12;
+    return 18;
+  }
 
-  return Math.round(maxGap - t * (maxGap - minGap));
+  if (isMobile) return 24;
+  return 36;
 }
 
 type AboutPageProps = {
   isMobile: boolean;
+  isCompactMobile: boolean;
   inset: number;
   photoSize: number;
   navCy: number;
@@ -27,6 +31,7 @@ type AboutPageProps = {
 
 export function AboutPage({
   isMobile,
+  isCompactMobile,
   inset,
   photoSize,
   navCy,
@@ -34,9 +39,9 @@ export function AboutPage({
   viewportHeight,
 }: AboutPageProps) {
   const { messages } = useLocale();
-  const displaySize = isMobile ? Math.min(photoSize, 280) : photoSize;
+  const displaySize = photoSize;
   const half = displaySize / 2;
-  const textGap = getAboutTextGap(viewportWidth, viewportHeight, isMobile);
+  const textGap = getAboutTextGap(viewportWidth, viewportHeight, isMobile, isCompactMobile);
   const headerBand = inset + 34;
   const topZoneBottom = navCy - half - textGap;
   const bottomZoneTop = navCy + half + textGap;

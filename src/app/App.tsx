@@ -217,6 +217,7 @@ export default function App() {
         ) : aboutView ? (
           <AboutPage
             isMobile={layout.isMobile}
+            isCompactMobile={layout.isCompactMobile}
             inset={layout.padding}
             photoSize={layout.cellSize}
             navCy={navCy}
