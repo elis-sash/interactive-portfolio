@@ -100,6 +100,15 @@
         "role": {
           "lead": "My role: Concept, 3D, UI/UX, development and WebGL interface implementation — solo project.",
           "body": "The gallery is a WebGL space built with Three.js, where the lamp becomes a canvas: magnetic stickers from solo creators and studios are placed directly on the 3D object. Visitors move through the interactive space, explore stickers by different authors on the art object, and can imagine their own work in the same format. The project rethinks the digital gallery format by turning a functional object into an exhibition space."
+        },
+        "elements": {
+          "alt": "Stop Gallery interface elements: Telegram and contacts"
+        },
+        "mobile-screen": {
+          "alt": "Stop Gallery mobile screens: gallery and sticker upload form"
+        },
+        "image-cover": {
+          "alt": "Three Stop Gallery LED screens with silhouettes in motion"
         }
       }
     },
@@ -109,8 +118,14 @@
           "lead": "My role: Concept, logo design, UI, first-screen prototype — competition project",
           "body": "The logo consists of two parts — one of which comes alive on the site and becomes the cursor on the first scroll down. The cards are styled like playing cards spread across a table. The built-in audio player is the key solution so that entering the site immediately engages visitors with the band's repertoire."
         },
-        "overview": {
-          "alt": "Koziri website concept overview"
+        "elements": {
+          "alt": "Koziri interface elements: audio player and logo"
+        },
+        "adaptive": {
+          "alt": "Koziri adaptive website layout"
+        },
+        "image-cover": {
+          "alt": "Koziri project cover"
         }
       }
     },
@@ -119,6 +134,9 @@
         "role": {
           "lead": "My role: Concept, UI, 3D elements, interaction design — design battle.",
           "body": "The original site page is full of color, with emphasis on book covers. In my concept I went in the opposite direction — toward minimal detail and away from showing book covers. The concept uses interactive 3D elements and linear illustrations. I was interested in testing whether a section about books could work without putting the books themselves in focus, shifting attention to their characters instead."
+        },
+        "elements": {
+          "alt": "Myth character illustrations: merman and Thoth"
         }
       }
     },
@@ -134,16 +152,13 @@
       "blocks": {
         "role": {
           "lead": "My role: 3D keychain modeling, preparing models for print — team project.",
-          "body": "Two out of three keychain designs were produced, based on illustrations by the team. One design did not perform as expected in print. It passed the detail check, but colors bled, so we dropped it during production. All the keychains sold out quickly and drew a lot of interest at the festival."
+          "body": "Two out of three keychain designs were produced, based on illustrations by the team. One design did not perform as expected in print. So we abandoned it during production. The keychains aroused great interest at the festival."
         },
-        "hero": {
-          "alt": "Murch keychain at Dprofile Fest"
+        "keychain-close": {
+          "alt": "Murch keychain with \"Don't stand\" on a bag"
         },
-        "fest-detail": {
-          "alt": "Keychain detail with the phrase \"Through love, not fear\""
-        },
-        "stickers-blender": {
-          "alt": "Sticker variants \"A senior was also a junior\" in Blender"
+        "keychain-wide": {
+          "alt": "Murch keychains with \"Through love, not fear\""
         }
       }
     },

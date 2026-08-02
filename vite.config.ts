@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import ru from './lang/ru.json';
 import eng from './lang/eng.json';
+import { buildLocaleDetectionIife } from './src/app/i18n/pickLocale';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -14,7 +15,8 @@ function localeMetaPlugin(): Plugin {
   return {
     name: 'locale-meta',
     transformIndexHtml(html) {
-      const script = `<script>(function(){var m=${metaByLocale};var l=(navigator.languages&&navigator.languages[0]||navigator.language||"en").toLowerCase();var k=l.indexOf("ru")===0?"ru":"eng";document.documentElement.lang=k==="ru"?"ru":"en";document.title=m[k].title;var d=document.querySelector('meta[name="description"]');if(d)d.setAttribute("content",m[k].description);})();</script>`;
+      const detectLocale = buildLocaleDetectionIife();
+      const script = `<script>(function(){var m=${metaByLocale};var k=${detectLocale};document.documentElement.lang=k==="ru"?"ru":"en";document.title=m[k].title;var d=document.querySelector('meta[name="description"]');if(d)d.setAttribute("content",m[k].description);})();</script>`;
 
       return html.replace('</head>', `      ${script}\n    </head>`);
     },

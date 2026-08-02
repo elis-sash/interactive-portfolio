@@ -1,8 +1,27 @@
 import { useLocale } from '../i18n/useLocale';
 import { fixAboutParagraph } from '../utils/text';
 
+function getAboutTextGap(
+  viewportWidth: number,
+  viewportHeight: number,
+  isMobile: boolean,
+  isCompactMobile: boolean,
+): number {
+  const isPortrait = viewportHeight > viewportWidth;
+
+  if (isPortrait) {
+    if (isCompactMobile) return 14;
+    if (isMobile) return 12;
+    return 18;
+  }
+
+  if (isMobile) return 24;
+  return 36;
+}
+
 type AboutPageProps = {
   isMobile: boolean;
+  isCompactMobile: boolean;
   inset: number;
   photoSize: number;
   navCy: number;
@@ -12,6 +31,7 @@ type AboutPageProps = {
 
 export function AboutPage({
   isMobile,
+  isCompactMobile,
   inset,
   photoSize,
   navCy,
@@ -19,9 +39,9 @@ export function AboutPage({
   viewportHeight,
 }: AboutPageProps) {
   const { messages } = useLocale();
-  const displaySize = isMobile ? Math.min(photoSize, 280) : photoSize;
+  const displaySize = photoSize;
   const half = displaySize / 2;
-  const textGap = 42;
+  const textGap = getAboutTextGap(viewportWidth, viewportHeight, isMobile, isCompactMobile);
   const headerBand = inset + 34;
   const topZoneBottom = navCy - half - textGap;
   const bottomZoneTop = navCy + half + textGap;

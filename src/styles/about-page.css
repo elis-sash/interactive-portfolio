@@ -31,14 +31,14 @@
 
 .about-page--mobile .about-page__text-zone--top {
   align-items: flex-end;
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 0;
 }
 
 .about-page--mobile .about-page__text-zone--bottom {
   align-items: flex-start;
-  padding-top: 4px;
-  padding-bottom: 12px;
+  padding-top: 0;
+  padding-bottom: 8px;
 }
 
 .about-page--mobile .about-page__text {
